@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffbeb">
+  <meta name="description" content="Kejutan ulang tahun penuh sunshine, style, dan kasih sayang.">
+  <title>Happy Birthday!</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sunshine: "#F59E0B",
+            cream: "#FFFBEB",
+            ink: "#1F2937"
+          },
+          fontFamily: {
+            sans: ["Poppins", "sans-serif"],
+            display: ["Syne", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <style>
+    :root { color-scheme: light; }
+    html { scroll-behavior: smooth; }
+    body { background: #fffbeb; }
+    .hero-pattern {
+      background-image: radial-gradient(rgba(31, 41, 55, .12) .8px, transparent .8px);
+      background-size: 15px 15px;
+    }
+    .carousel-track { transition: transform .55s cubic-bezier(.2,.8,.2,1); }
+    .carousel-slide img { transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+    .carousel-slide:hover img { transform: scale(1.035); }
+    .carousel-dot { transition: width .25s ease, background-color .25s ease; }
+    .carousel-dot[aria-pressed="true"] { width: 2rem; background: #1F2937; }
+    .wish-card { transition: transform .25s ease, box-shadow .25s ease; }
+    .wish-card:hover, .wish-card:focus-visible {
+      transform: translateY(-5px) rotate(-1deg);
+      box-shadow: 0 20px 45px rgba(31, 41, 55, .12);
+    }
+    .reveal { animation: reveal .35s ease both; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body class="font-sans text-ink antialiased selection:bg-amber-200">
+  <!-- GANTI DENGAN nama adik pada birthdayConfig.name di bagian JavaScript bawah. -->
+  <main>
+    <section class="relative overflow-hidden px-5 pb-16 pt-6 sm:px-8 sm:pb-24 sm:pt-8">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between" aria-label="Navigasi utama">
+        <a href="#" class="font-display text-lg font-extrabold tracking-tight">BOKEM<span class="text-sunshine">.</span></a>
+        <a href="#memories" class="rounded-full border border-ink/15 px-4 py-2 text-xs font-semibold transition hover:bg-ink hover:text-white sm:px-5 sm:text-sm">Scroll kebawah <i class="fa-solid fa-arrow-down ml-1 text-[10px]"></i></a>
+      </nav>
+
+      <div class="hero-pattern relative mx-auto mt-7 grid max-w-6xl overflow-hidden rounded-[2rem] bg-[#f8c65c] sm:mt-10 sm:min-h-[540px] sm:grid-cols-[1.05fr_.95fr] sm:rounded-[2.5rem]">
+        <div class="relative z-10 flex flex-col items-start justify-center px-6 py-12 sm:px-12 sm:py-16 lg:px-16">
+          <span class="mb-5 inline-flex items-center gap-2 rounded-full bg-white/75 px-4 py-2 text-[10px] font-bold uppercase tracking-[.2em] sm:text-xs">
+            <i class="fa-solid fa-sun text-sunshine"></i> karaker Utama Hari Ini
+          </span>
+          <p class="mb-2 text-sm font-medium sm:text-base">Hari ini adikku bertambah dewasa.</p>
+          <h1 class="font-display text-[clamp(3.1rem,12vw,6.7rem)] font-extrabold leading-[.88] tracking-[-.07em]">
+            Happy<br>Birthday,<br><span data-sister-name>shunshine</span><span class="text-white">!!!</span>
+          </h1>
+          <p class="mt-6 max-w-sm text-sm leading-7 text-ink/75 sm:text-base">Satu hari spesial untuk orang paling stylish, paling seru, dan paling lovable di rumah. Hari ini semua spotlight buat kamu ✨</p>
+          <a href="#wishlist" class="mt-7 inline-flex min-h-12 items-center gap-3 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-ink/15 transition hover:-translate-y-1 hover:bg-ink/90">
+            Pilih kado<span aria-hidden="true">✨</span>
+          </a>
+          <span class="mt-8 text-[10px] font-semibold uppercase tracking-[.23em] text-ink/55">A birthday lookbook.</span>
+        </div>
+        <div class="relative min-h-[300px] sm:min-h-full">
+          <img src="Image\upscalemedia-transformed.jpeg" alt="Wajah khansa" class="absolute inset-0 h-full w-full object-cover object-center">
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/35 via-transparent to-transparent sm:bg-gradient-to-r sm:from-[#f8c65c]/20 sm:via-transparent sm:to-transparent"></div>
+          <div class="absolute bottom-5 right-5 rotate-3 rounded-2xl bg-cream px-4 py-3 shadow-xl sm:bottom-8 sm:right-8 sm:px-5">
+            <p class="font-display text-xl font-extrabold">Happy Birthday sister</p>
+            <p class="mt-1 text-[10px] uppercase tracking-[.18em] text-ink/60">Beranjak dewasa</p>
+          </div>
+          <div class="absolute left-5 top-5 flex h-14 w-14 rotate-[-12deg] items-center justify-center rounded-full bg-white text-2xl shadow-lg sm:left-8 sm:top-8">☀️</div>
+        </div>
+      </div>
+      <div class="mx-auto mt-6 flex max-w-6xl items-center justify-between text-[10px] font-semibold uppercase tracking-[.2em] text-ink/45 sm:mt-8">
+        <span>Episode <span class="text-sunshine">[Umur 18]</span></span><span>Est. forever loved</span>
+      </div>
+    </section>
+
+    <section id="wishlist" class="px-5 py-16 sm:px-8 sm:py-24">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-8 flex items-end justify-between gap-4 sm:mb-10">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[.22em] text-sunshine">Pilih salah satu kado</p>
+            <h2 class="mt-2 font-display text-3xl font-extrabold tracking-tight sm:text-5xl">ketuk untuk membuka.<span class="text-sunshine"></span></h2>
+          </div>
+          <p class="hidden max-w-xs text-right text-sm leading-6 text-ink/55 sm:block">Pilih salah satu kado yang kamu inginkan. <br>WAJIB SATU, TIDAK MENERIMA DUA PILIHAN.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-10">
+          <!-- GANTI URL gambar sepatu/tas di atribut src kartu-kartu wishlist ini. -->
+          <button type="button" class="wish-card group overflow-hidden rounded-3xl bg-white text-left shadow-sm" data-wish="Deal Sepatu">
+            <div class="aspect-[4/5] overflow-hidden bg-amber-100"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Sneakers merah sporty" class="h-full w-full object-cover transition duration-500 group-hover:scale-105"></div>
+            <span class="block p-3 sm:p-4"><span class="block font-display text-lg font-bold sm:text-xl">Sneaker</span>
+            <span class="mt-1 block text-[11px] text-ink/50 sm:text-xs">Melangkah lebih jauh ↗</span></span>
+          </button>
+          <button type="button" class="wish-card group overflow-hidden rounded-3xl bg-white text-left shadow-sm" data-wish="Semoga tas trendy incaranmu segera jadi teman jalan-jalan paling kece! 👜">
+            <div class="aspect-[4/5] overflow-hidden bg-orange-100"><img src="Image\Kipas angin genggam.jpeg" alt="Kipas angin portabel" class="h-full w-full object-cover transition duration-500 group-hover:scale-105"></div>
+            <span class="block p-3 sm:p-4"><span class="block font-display text-lg font-bold sm:text-xl">Kipas Angin</span><span class="mt-1 block text-[11px] text-ink/50 sm:text-xs">Untuk jaga-jaga saatt siang ↗</span></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="memories" class="bg-[#f4ead1] px-5 py-16 sm:px-8 sm:py-24">
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-8 flex flex-col justify-between gap-5 sm:mb-10 sm:flex-row sm:items-end">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-[.22em] text-sunshine">Potongan cerita kita</p>
+              <h2 class="mt-2 font-display text-3xl font-extrabold tracking-tight sm:text-5xl">Your life in photos<span class="text-sunshine">.</span></h2>
+            </div>
+            <div class="flex items-center justify-between gap-4 sm:justify-end">
+              <p class="text-sm text-ink/55">Geser untuk melihat kenangan</p>
+              <div class="flex gap-2">
+                <button type="button" data-carousel-prev aria-label="Foto sebelumnya" class="flex h-11 w-11 items-center justify-center rounded-full bg-white text-ink shadow-sm transition hover:bg-ink hover:text-white focus:outline-none focus:ring-4 focus:ring-amber-300">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                </button>
+                <button type="button" data-carousel-next aria-label="Foto berikutnya" class="flex h-11 w-11 items-center justify-center rounded-full bg-white text-ink shadow-sm transition hover:bg-ink hover:text-white focus:outline-none focus:ring-4 focus:ring-amber-300">
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div data-photo-carousel role="region" aria-roledescription="carousel" aria-label="Galeri foto ulang tahun" tabindex="0" class="overflow-hidden rounded-[2rem] bg-white p-2 shadow-[0_20px_70px_rgba(31,41,55,.08)] focus:outline-none focus:ring-4 focus:ring-amber-300 sm:p-3">
+            <div class="relative overflow-hidden rounded-[1.5rem] bg-amber-100">
+              <div data-carousel-track class="carousel-track flex">
+                <!-- Ganti URL gambar pada src setiap slide dengan foto kenangan kalian. -->
+                <figure class="carousel-slide group relative aspect-[4/3] min-w-0 flex-[0_0_100%] overflow-hidden sm:aspect-[16/8]">
+                  <img src="Image\upscalemedia-transformed.jpeg" alt="Khansa tersenyum mengenakan kacamata" class="absolute inset-0 h-full w-full object-cover object-center" fetchpriority="high">
+                  <div class="absolute inset-0 bg-gradient-to-t from-ink/65 via-transparent to-ink/10"></div>
+                  <figcaption class="absolute inset-x-5 bottom-5 flex items-end justify-between gap-4 text-white sm:inset-x-8 sm:bottom-8">
+                    <span><span class="block text-[10px] font-bold uppercase tracking-[.22em] text-amber-200">01 · Little sunshine</span><span class="mt-1 block font-display text-2xl font-extrabold sm:text-4xl">Senyum paling cerah ☀️</span></span>
+                    <span class="hidden rounded-full border border-white/50 bg-white/15 px-4 py-2 text-xs font-semibold backdrop-blur sm:block">A birthday lookbook</span>
+                  </figcaption>
+                </figure>
+                <figure class="carousel-slide group relative aspect-[4/3] min-w-0 flex-[0_0_100%] overflow-hidden sm:aspect-[16/8]">
+                  <img src="Image\30174.jpg" alt="Sekelompok sahabat berkumpul bersama" class="absolute inset-0 h-full w-full object-cover object-center" loading="lazy">
+                  <div class="absolute inset-0 bg-gradient-to-t from-ink/65 via-transparent to-ink/10"></div>
+                  <figcaption class="absolute inset-x-5 bottom-5 text-white sm:inset-x-8 sm:bottom-8"><span class="block text-[10px] font-bold uppercase tracking-[.22em] text-amber-200">02 · Bestie days</span><span class="mt-1 block font-display text-2xl font-extrabold sm:text-4xl">Cerita seru bareng keluarga💕</span></figcaption>
+                </figure>
+                <figure class="carousel-slide group relative aspect-[4/3] min-w-0 flex-[0_0_100%] overflow-hidden sm:aspect-[16/8]">
+                  <img src="Image\IMG20240701095938.jpg" alt="Perayaan ulang tahun dengan teman-teman" class="absolute inset-0 h-full w-full object-cover object-center" loading="lazy">
+                  <div class="absolute inset-0 bg-gradient-to-t from-ink/65 via-transparent to-ink/10"></div>
+                  <figcaption class="absolute inset-x-5 bottom-5 text-white sm:inset-x-8 sm:bottom-8"><span class="block text-[10px] font-bold uppercase tracking-[.22em] text-amber-200">03 · Growing glow</span><span class="mt-1 block font-display text-2xl font-extrabold sm:text-4xl">Makin bersinar setiap hari ✨</span></figcaption>
+                </figure>
+              </div>
+              <span data-carousel-count aria-hidden="true" class="absolute right-4 top-4 rounded-full bg-ink/55 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur sm:right-6 sm:top-6">01 / 05</span>
+            </div>
+          </div>
+          <div class="mt-5 flex items-center justify-center gap-2" data-carousel-dots aria-label="Pilih foto"></div>
+          <p class="sr-only" data-carousel-announcement aria-live="polite" aria-atomic="true"></p>
+          <p class="mt-3 text-center text-xs text-ink/50">Gunakan tombol panah atau tombol ← → untuk menjelajahi foto.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-5 py-16 sm:px-8 sm:py-24">
+      <div class="mx-auto max-w-4xl">
+        <div class="relative overflow-hidden rounded-[2rem] bg-white px-6 py-9 shadow-[0_20px_70px_rgba(31,41,55,.07)] sm:px-12 sm:py-14">
+          <span class="absolute -right-3 -top-8 font-display text-[10rem] leading-none text-amber-100" aria-hidden="true">“</span>
+          <div class="relative">
+            <p class="text-xs font-bold uppercase tracking-[.22em] text-sunshine">Catatan</p>
+            <h2 class="mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">untuk gembul...</h2>
+            <!-- GANTI DENGAN teks surat, pesan ulang tahun, doa, dan harapan kalian di paragraf-paragraf ini. -->
+            <div class="mt-6 space-y-4 text-sm leading-7 text-ink/70 sm:text-base sm:leading-8">
+              <p>Selamat ulang tahun de. tahun ini kamu udah usianya 18 yak, berarti semakin dekat dengan usia dewasa</p>
+              <p>Semoga di usia baru ini kamu selalu sehat, bahagia, makin percaya diri mengejar mimpi, semakin sabar, semakin pengertian juga. (amin paling serius 😌).</p></p>
+              <p>Semakin dewasa, kamu harus bisa mengatur rasa takut kamu. engga perlu takut untuk gagal, namun takut jika kamu hanya diam.</p>
+            </div>
+            <div class="mt-8 flex items-center gap-3 border-t border-ink/10 pt-5">
+              <div class="flex h-11 w-11 items-center justify-center rounded-full bg-amber-100 text-lg" aria-hidden="true">💌</div>
+              <div><p class="text-sm font-bold">Form your family,</p><p class="text-xs text-ink/55">Keluarga Yukasama</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-5 pb-20 sm:px-8 sm:pb-28">
+      <div class="mx-auto max-w-6xl overflow-hidden rounded-[2rem] bg-ink px-6 py-12 text-center text-white sm:px-12 sm:py-16">
+        <span class="text-3xl" aria-hidden="true">🎂 ✨ 🎈</span>
+        <p class="mt-5 text-xs font-bold uppercase tracking-[.22em] text-amber-300">Doaku</p>
+        <h2 class="mx-auto mt-3 max-w-2xl font-display text-3xl font-extrabold leading-tight sm:text-5xl">untuk kamu.</h2>
+        <p class="mx-auto mt-4 max-w-md text-sm leading-6 text-white/65">Semoga di tahun ini semua harapan dan impian kamu terwujud!!!!</p>
+        <p class="mx-auto mt-4 max-w-md text-sm leading-6 text-white/65">Semoga kamu mendapatkan pertemana yang membuatt kamu bahagia serta menjaga kamu.</p>
+        <button id="celebrate-button" type="button" class="mt-7 inline-flex min-h-12 items-center gap-3 rounded-full bg-sunshine px-6 py-3 text-sm font-bold text-ink transition hover:scale-105 hover:bg-amber-300 focus:outline-none focus:ring-4 focus:ring-amber-200/50">
+          Celebrate you <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="px-5 pb-8 text-center text-[10px] font-medium uppercase tracking-[.2em] text-ink/40"> · <span data-sister-name>you</span>’s special day ·</footer>
+
+  <button id="music-button" type="button" aria-label="Putar musik" aria-pressed="false" class="fixed bottom-5 right-5 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-ink text-xl text-white shadow-xl shadow-ink/25 transition hover:scale-105 focus:outline-none focus:ring-4 focus:ring-amber-300 sm:bottom-7 sm:right-7">
+    <i id="music-icon" class="fa-solid fa-play" aria-hidden="true"></i>
+  </button>
+  <p id="music-status" class="fixed bottom-[5.25rem] right-5 z-30 max-w-[230px] rounded-xl bg-ink px-3 py-2 text-xs text-white shadow-lg sm:bottom-[6rem] sm:right-7" role="status" aria-live="polite"></p>
+  <!-- GANTI DENGAN URL file musik .mp3 pada birthdayConfig.musicUrl di JavaScript bawah. -->
+  <audio id="birthday-audio" preload="none"></audio>
+
+  <div id="wish-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-ink/55 px-5 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="wish-title">
+    <div class="reveal relative w-full max-w-sm rounded-[2rem] bg-cream p-7 text-center shadow-2xl">
+      <button id="close-modal" type="button" aria-label="Tutup pesan" class="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white text-ink/60 transition hover:bg-amber-100"><i class="fa-solid fa-xmark"></i></button>
+      <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-amber-100 text-3xl">🎁</div>
+      <p class="mt-5 text-[10px] font-bold uppercase tracking-[.22em] text-sunshine">A little birthday wish</p>
+      <h2 id="wish-title" class="mt-2 font-display text-2xl font-extrabold">Unboxed with love!</h2>
+      <p id="wish-message" class="mt-3 text-sm leading-6 text-ink/65"></p>
+      <button id="modal-done" type="button" class="mt-6 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-ink/80">Amin, please ✨</button>
+    </div>
+  </div>
+
+  <script>
+    // GANTI DENGAN nama adik dan URL file musik .mp3 kalian di sini.
+    const birthdayConfig = {
+      name: "Gembul",
+      musicUrl: ""
+    };
+
+    document.querySelectorAll("[data-sister-name]").forEach((element) => {
+      element.textContent = birthdayConfig.name;
+    });
+
+    const photoCarousel = document.querySelector("[data-photo-carousel]");
+    const carouselTrack = photoCarousel.querySelector("[data-carousel-track]");
+    const carouselSlides = Array.from(carouselTrack.children);
+    const carouselDots = photoCarousel.parentElement.querySelector("[data-carousel-dots]");
+    const carouselCount = photoCarousel.querySelector("[data-carousel-count]");
+    const carouselAnnouncement = photoCarousel.parentElement.querySelector("[data-carousel-announcement]");
+    let currentSlide = 0;
+
+    function showCarouselSlide(index) {
+      currentSlide = (index + carouselSlides.length) % carouselSlides.length;
+      carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+      carouselSlides.forEach((slide, slideIndex) => {
+        slide.setAttribute("aria-hidden", String(slideIndex !== currentSlide));
+      });
+      Array.from(carouselDots.children).forEach((dot, dotIndex) => {
+        dot.setAttribute("aria-pressed", String(dotIndex === currentSlide));
+      });
+      const position = `${String(currentSlide + 1).padStart(2, "0")} / ${String(carouselSlides.length).padStart(2, "0")}`;
+      carouselCount.textContent = position;
+      carouselAnnouncement.textContent = `Foto ${currentSlide + 1} dari ${carouselSlides.length}`;
+    }
+
+    carouselSlides.forEach((slide, index) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "carousel-dot h-2.5 w-2.5 rounded-full bg-ink/20 focus:outline-none focus:ring-4 focus:ring-amber-300";
+      dot.setAttribute("aria-label", `Tampilkan foto ${index + 1}`);
+      dot.setAttribute("aria-pressed", "false");
+      dot.addEventListener("click", () => showCarouselSlide(index));
+      carouselDots.append(dot);
+    });
+    showCarouselSlide(0);
+
+    photoCarousel.parentElement.querySelector("[data-carousel-prev]").addEventListener("click", () => {
+      showCarouselSlide(currentSlide - 1);
+    });
+    photoCarousel.parentElement.querySelector("[data-carousel-next]").addEventListener("click", () => {
+      showCarouselSlide(currentSlide + 1);
+    });
+    photoCarousel.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        event.preventDefault();
+        showCarouselSlide(currentSlide + (event.key === "ArrowRight" ? 1 : -1));
+      }
+    });
+
+    let touchStartX = null;
+    photoCarousel.addEventListener("touchstart", (event) => {
+      touchStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+    photoCarousel.addEventListener("touchend", (event) => {
+      if (touchStartX === null) return;
+      const swipeDistance = event.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(swipeDistance) > 50) {
+        showCarouselSlide(currentSlide + (swipeDistance < 0 ? 1 : -1));
+      }
+      touchStartX = null;
+    }, { passive: true });
+
+    const audio = document.getElementById("birthday-audio");
+    const musicButton = document.getElementById("music-button");
+    const musicIcon = document.getElementById("music-icon");
+    const musicStatus = document.getElementById("music-status");
+    let statusTimeout;
+
+    if (birthdayConfig.musicUrl.trim()) {
+      audio.src = birthdayConfig.musicUrl.trim();
+    }
+
+    function showMusicStatus(message) {
+      musicStatus.textContent = message;
+      musicStatus.classList.remove("hidden");
+      window.clearTimeout(statusTimeout);
+      statusTimeout = window.setTimeout(() => musicStatus.classList.add("hidden"), 3500);
+    }
+
+    musicButton.addEventListener("click", async () => {
+      if (!birthdayConfig.musicUrl.trim()) {
+        showMusicStatus("Tambahkan URL file .mp3 di birthdayConfig.musicUrl dulu ya 🎵");
+        return;
+      }
+      if (audio.paused) {
+        try {
+          await audio.play();
+        } catch (error) {
+          showMusicStatus("Musik belum bisa diputar. Cek URL file .mp3 dan coba lagi.");
+          console.error("Gagal memutar musik ulang tahun:", error);
+        }
+      } else {
+        audio.pause();
+      }
+    });
+
+    audio.addEventListener("play", () => {
+      musicIcon.className = "fa-solid fa-pause";
+      musicButton.setAttribute("aria-label", "Jeda musik");
+      musicButton.setAttribute("aria-pressed", "true");
+    });
+    audio.addEventListener("pause", () => {
+      musicIcon.className = "fa-solid fa-play";
+      musicButton.setAttribute("aria-label", "Putar musik");
+      musicButton.setAttribute("aria-pressed", "false");
+    });
+    audio.addEventListener("error", () => showMusicStatus("File musik tidak dapat dimuat. Periksa URL .mp3 kamu."));
+
+    const wishModal = document.getElementById("wish-modal");
+    const wishMessage = document.getElementById("wish-message");
+    const closeModalButton = document.getElementById("close-modal");
+    let lastFocusedElement;
+
+    function closeWishModal() {
+      wishModal.classList.add("hidden");
+      wishModal.classList.remove("flex");
+      if (lastFocusedElement) lastFocusedElement.focus();
+    }
+
+    document.querySelectorAll("[data-wish]").forEach((card) => {
+      card.addEventListener("click", () => {
+        lastFocusedElement = card;
+        wishMessage.textContent = card.dataset.wish;
+        wishModal.classList.remove("hidden");
+        wishModal.classList.add("flex");
+        closeModalButton.focus();
+      });
+    });
+    closeModalButton.addEventListener("click", closeWishModal);
+    document.getElementById("modal-done").addEventListener("click", closeWishModal);
+    wishModal.addEventListener("click", (event) => {
+      if (event.target === wishModal) closeWishModal();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !wishModal.classList.contains("hidden")) closeWishModal();
+    });
+
+    document.getElementById("celebrate-button").addEventListener("click", () => {
+      if (typeof window.confetti !== "function") {
+        console.error("Canvas Confetti tidak berhasil dimuat dari CDN.");
+        return;
+      }
+      const duration = 2200;
+      const end = Date.now() + duration;
+      const colors = ["#F59E0B", "#FFFBEB", "#FCA5A5", "#FFFFFF"];
+      (function frame() {
+        window.confetti({
+          particleCount: 4,
+          angle: 60,
+          spread: 65,
+          origin: { x: 0, y: 0.75 },
+          colors
+        });
+        window.confetti({
+          particleCount: 4,
+          angle: 120,
+          spread: 65,
+          origin: { x: 1, y: 0.75 },
+          colors
+        });
+        if (Date.now() < end) window.requestAnimationFrame(frame);
+      })();
+    });
+  </script>
+</body>
+</html>

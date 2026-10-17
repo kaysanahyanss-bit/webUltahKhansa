@@ -1,0 +1,19 @@
+:root { color-scheme: light; }
+html { scroll-behavior: smooth; }
+body { background: #fffbeb; }
+.hero-pattern {
+  background-image: radial-gradient(rgba(31, 41, 55, .12) .8px, transparent .8px);
+  background-size: 15px 15px;
+}
+.photo-card img { transition: transform .55s cubic-bezier(.2,.8,.2,1); }
+.photo-card:hover img { transform: scale(1.045); }
+.wish-card { transition: transform .25s ease, box-shadow .25s ease; }
+.wish-card:hover, .wish-card:focus-visible {
+  transform: translateY(-5px) rotate(-1deg);
+  box-shadow: 0 20px 45px rgba(31, 41, 55, .12);
+}
+.reveal { animation: reveal .35s ease both; }
+@keyframes reveal { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
